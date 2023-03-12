@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Adminer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/efekteks.css">
+  <link rel="stylesheet" href="css/responsif.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+</head>
+
+<body>
+  <div class="kontener2" id="kontener2">
+    <h1 id="waktu"></h1>
+        <script type="text/javascript">
+          document.write("<center>");
+          var hari = new Date();
+          var jam = hari.getHours();
+          if (jam >= 0 && jam < 12) {
+            document.write(
+              "<h1 class='ucapan'>Good Morning</h1><p class='isiucapan'>Being happy or sad, gloomy or excited, moody or stable are options that are always presented to you every morning. You just have to make the right choice.<p>"
+            );
+          } else if (jam == 12 ) {
+            document.write(
+              "<h1 class='ucapan'>Good Afternoon</h1><p class='isiucapan'>Don't forget lunch, you need relax awhile.<p>"
+            );
+          } else if (jam >= 13 && jam <= 17) {
+            document.write(
+              "<h1 class='ucapan'>Good Evening</h1><p class='isiucapan'>The afternoon is not only the middle of the day, it is the time to complete our essential task and go ahead in life.<p>"
+            );
+          } else {
+            document.write(
+              "<h1 class='ucapan'>Good Night</h1><p class='isiucapan'>Don't complain about today. Make a better tomorrow by making the most of today.Than Don't forget to take a rest.<p>"
+            );
+          }
+          document.write("</center>");
+        </script>
+      <button class="tombol" id="tombol">Start</button>
+  </div>
+
+  <div class="kontener" id="kontener">
+    <div class="dalemnya_kontener">
+      <h1 class="judul_halaman">Menu</h1>
+      <a class="tombol_menu" onclick="klikMenu()"></a>
+
+      <section class="halaman1 dalemnya_halaman" onclick="PindahKeHalaman(0)">
+        <h1 class="judul_halaman">Hint 1</h1>
+        <br>
+        <br>
+        <div class="ucapan1">
+          <img src="gambar/gambar1.jpg" style=" width: 40%; height: 450px;" class="gambar">
+          <div id="str1"></div>
+        </div>
+      </section>
+
+      <section class="halaman2 dalemnya_halaman" onclick="PindahKeHalaman(1)">
+        <h1 class="judul_halaman">Hint 2</h1>
+        <br>
+        <br>
+        <div class="ucapan2">
+          <img src="gambar/gambar2.jpg" style=" width: 40%; height: 450px;" class="gambar">
+          <div id="str2"></div>
+        </div>
+      </section>
+
+      <section class="halaman3 dalemnya_halaman" onclick="PindahKeHalaman(2)">
+        <h1 class="judul_halaman">For You</h1>
+        <br>
+        <br>
+        <div class="ucapan3">
+          <video width: 40%; height: 450px; controls>
+            <source src="gambar/gif.mp4" type="video/mp4">
+          </video>
+          <div id="str3"></div>
+        </div>
+      </section>
+
+      <section class="halaman4 dalemnya_halaman" onclick="PindahKeHalaman(3)">
+        <h1 class="judul_halaman">How was ur day?</h1>
+        <div id="str4"></div>
+        <p style="text-align: center; color: #ac8c8c;">Pick your Mood: </p>
+        <div>
+            <input type="radio" name="size" value="angry" id="angry">
+            <label for="angry">Angry &#128545</label>
+        </div>
+        <div>
+            <input type="radio" name="size" value="happy" id="happy">
+            <label for="happy">Happy &#128516</label>
+        </div>
+        <div>
+          <input type="radio" name="size" value="tired" id="tired">
+          <label for="tired">Tired &#128555</label>
+          </div>
+        <div>
+          <input type="radio" name="size" value="sad" id="sad">
+          <label for="sad">Sad &#128557</label>
+        </div>
+        <p>
+          <button class="tombol" id="btn">Submit</button>
+         </p>
+      <p id="output"></p>
+        
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"
+    integrity="sha512-synHs+rLg2WDVE9U0oHVJURDCiqft60GcWOW7tXySy8oIr0Hjl3K9gv7Bq/gSj4NDVpc5vmsNkMGGJ6t2VpUMA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js" type="text/javascript"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+    var string4 = "Yesterday is history, tomorrow is a mystery, today is a gift of God, which is why we call it the present.";
+    var str4 = string4.split("");
+    var el4 = document.getElementById('str4');
+    (function animate() {
+    str4.length > 0 ? el4.innerHTML += str4.shift() : clearTimeout(running4); 
+    var running4 = setTimeout(animate,100);
+    })();
+  </script>
+
+  <script>
+    var string3 = "isi halaman 3.";
+    var str3 = string3.split("");
+    var el3 = document.getElementById('str3');
+    (function animate() {
+    str3.length > 0 ? el3.innerHTML += str3.shift() : clearTimeout(running3); 
+    var running3 = setTimeout(animate,100);
+    })();
+  </script>
+
+  <script>
+    var string2 = "isi halaman 2.";
+    var str2 = string2.split("");
+    var el2 = document.getElementById('str2');
+    (function animate() {
+    str2.length > 0 ? el2.innerHTML += str2.shift() : clearTimeout(running2); 
+    var running2 = setTimeout(animate,100);
+    })();
+  </script>
+
+  <script>
+    var string1 = "isi halaman 1.";
+    var str1 = string1.split("");
+    var el1 = document.getElementById('str1');
+    (function animate() {
+    str1.length > 0 ? el1.innerHTML += str1.shift() : clearTimeout(running1); 
+    var running1 = setTimeout(animate,100);
+    })();
+  </script>
+
+  <script>
+    const btn = document.querySelector('#btn');        
+    const radioButtons = document.querySelectorAll('input[name="size"]');
+    btn.addEventListener("click", () => {
+        let selectedSize;
+        for (const radioButton of radioButtons) {
+            if (radioButton.checked) {
+                selectedSize = radioButton.value;
+                break;
+            }
+        }
+        // show the output:\
+        if(selectedSize=="angry"){
+          output.innerText = "It could be that what you are doing is not right. It's better to suppress your angry and then try to solve the problem with a calm and relaxed so you can fix it";
+          var audio = new Audio('audio/audio.mp3');
+          audio.play();
+          audio.volume = 0.25;
+        }
+        if(selectedSize=="happy"){
+          output.innerText = "Sometimes your joy is the source of your smile, and sometimes your smile is the source of your joy.";
+          var audio = new Audio('audio/audio1.mp3');
+          audio.play();
+          audio.volume = 0.25;
+        }
+        if(selectedSize=="tired"){
+          output.innerText = "Take a break and if you are tired then you can fight. No need to be so tired with yourself to get something that, until you forget something very important to the world";
+          var audio = new Audio('audio/audio2.mp3');
+          audio.play();
+          audio.volume = 0.25;
+        }
+        if(selectedSize=="sad"){
+          output.innerText = "People cry not because they're weak but because they've been strong for too long.";
+          var audio = new Audio('audio/audio3.mp3');
+          audio.play();
+          audio.volume = 0.25;
+        }
+        if(selectedSize=="flat"){
+          output.innerText = "No matter how hard life seems to be through these times, may you do your best to focus on something that makes you smile.";
+          var audio = new Audio('audio/audio4.mp3');
+          audio.play();
+          audio.volume = 0.25;
+        }
+    });
+  </script>
+  <script>
+    document.getElementById("waktu").innerHTML = formatAMPM();
+
+    function formatAMPM() {
+      var waktu = new Date(),
+        menit = waktu.getMinutes().toString().length == 1 ? '0' + waktu.getMinutes() : waktu.getMinutes(),
+        jam = waktu.getHours().toString().length == 1 ? '0' + waktu.getHours() : waktu.getHours(),
+        ampm = waktu.getHours() >= 12 ? 'PM' : 'AM',
+        bulan = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agust', 'September', 'October',
+          'November', 'December'
+        ],
+        hari = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      return '<h1 class="ml1"><span class="text-wrapper"><span class="line line1"></span><span class="letters">' + hari[
+          waktu.getDay()] +
+        ', ' + waktu.getDate() + ' ' + bulan[waktu.getMonth()] +
+        ' ' + waktu.getFullYear() + '</span><span class="line line2"></span></span></h1><p class="ml2"> ' + jam + ':' +
+        menit + ' ' + ampm + ' </p>';
+
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#tombol").click(function () {
+        $("#kontener2").fadeOut();
+        $("#kontener").fadeIn("4000");
+      });
+    });
+  </script>
+  <script>
+    var textWrapper = document.querySelector('.ml1 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({
+        loop: false
+      })
+      .add({
+        targets: '.ml1 .letter',
+        scale: [0.3, 1],
+        opacity: [0, 1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 600,
+        delay: (el, i) => 70 * (i + 1)
+      }).add({
+        targets: '.ml1 .line',
+        scaleX: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700,
+        offset: '-=875',
+        delay: (el, i, l) => 80 * (l - i)
+      }).add({
+        targets: '.ml1',
+        opacity: 1,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+  <script>
+    var textWrapper = document.querySelector('.ml2');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({
+        loop: false
+      })
+      .add({
+        targets: '.ml2 .letter',
+        scale: [4, 1],
+        opacity: [0, 1],
+        translateZ: 0,
+        easing: "easeOutExpo",
+        duration: 950,
+        delay: 1400
+      }).add({
+        targets: '.ml2',
+        opacity: 1,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+      });
+  </script>
+</body>
+
+</html>
